@@ -153,8 +153,8 @@ static const uint8_t SCK  = PIN_SPI_SCK;
  */
 #define WIRE_INTERFACES_COUNT 1
 
-#define PIN_WIRE_SDA         (1u)
-#define PIN_WIRE_SCL         (2u)
+#define PIN_WIRE_SDA         (2u)
+#define PIN_WIRE_SCL         (1u)
 #define PERIPH_WIRE          sercom0
 #define WIRE_IT_HANDLER      SERCOM0_Handler
 
@@ -170,13 +170,13 @@ static const uint8_t SCL = PIN_WIRE_SCL;
 /*
  * I2S Interfaces
  */
-#define I2S_INTERFACES_COUNT 0
+#define I2S_INTERFACES_COUNT 1
 
-// #define I2S_DEVICE          0
-// #define I2S_CLOCK_GENERATOR 3
-// #define PIN_I2S_SD          (9u)
-// #define PIN_I2S_SCK         (1u)
-// #define PIN_I2S_FS          (0u)
+#define I2S_DEVICE          0
+#define I2S_CLOCK_GENERATOR 3
+#define PIN_I2S_SD          (11u)
+#define PIN_I2S_SCK         (1u)
+#define PIN_I2S_FS          (2u)
 
 #ifdef __cplusplus
 }
