@@ -60,7 +60,7 @@ extern "C" unsigned int PINCOUNT_fn();
 #define NUM_DIGITAL_PINS     (23u)
 #define NUM_ANALOG_INPUTS    (9u)
 #define NUM_ANALOG_OUTPUTS   (1u)
-#define analogInputToDigitalPin(p)  ((p <= 8u) ? (p) : -1)
+#define analogInputToDigitalPin(p)  (((p) < NUM_ANALOG_INPUTS) ? (p) : -1)
 
 #define digitalPinToPort(P)        ( &(PORT->Group[g_APinDescription[P].ulPort]) )
 #define digitalPinToBitMask(P)     ( 1 << g_APinDescription[P].ulPin )
