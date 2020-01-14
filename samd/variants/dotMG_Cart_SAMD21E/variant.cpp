@@ -23,18 +23,12 @@
  */
 const PinDescription g_APinDescription[]=
 {
-  // ====================
-  // Digital/Analog I/O
-  // ====================
-
-  // SS
-  /* D0/A0, DAC    */ { PORTA, 2, PIO_ANALOG, (PIN_ATTR_DIGITAL|PIN_ATTR_ANALOG), ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2 }, // ADC/AIN[0], DAC
+  /* D0/A0, DAC, SPI: SS */ { PORTA, 2, PIO_ANALOG, (PIN_ATTR_DIGITAL|PIN_ATTR_ANALOG), ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2 }, // ADC/AIN[0], DAC
 
   // I2C / I2S (partial, see SPI section below for I2S SD)
   // -----------------------------------------------------
   /* ~D1/A1, I2C: SCL, I2S: SCK */ { PORTA, 10, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_ANALOG|PIN_ATTR_PWM|PIN_ATTR_TIMER_ALT), ADC_Channel18, PWM0_CH2, TCC0_CH2, EXTERNAL_INT_10 }, // ADC/AIN[18], TCC0/WO[2], SDA: SERCOM0/PAD[2]
   /* ~D2/A2, I2C: SDA, I2S: FS  */ { PORTA, 11, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_ANALOG|PIN_ATTR_PWM|PIN_ATTR_TIMER_ALT), ADC_Channel19, PWM0_CH3, TCC0_CH3, EXTERNAL_INT_11 }, // ADC/AIN[19], TCC0/WO[3], SCL: SERCOM0/PAD[3]
-
 
   // Up, Down, Left, Right
   // ---------------------
@@ -47,11 +41,6 @@ const PinDescription g_APinDescription[]=
   // --------------------
   /* ~D7/A7 */ { PORTA, 8, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_ANALOG|PIN_ATTR_PWM|PIN_ATTR_TIMER_ALT), ADC_Channel16, PWM1_CH2, TCC1_CH2, EXTERNAL_INT_NMI }, // ADC/AIN[16], TCC1/WO[2]
   /* ~D8/A8 */ { PORTA, 9, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_ANALOG|PIN_ATTR_PWM|PIN_ATTR_TIMER_ALT), ADC_Channel17, PWM1_CH3, TCC1_CH3, EXTERNAL_INT_9 },   // ADC/AIN[17], TCC1/WO[3]
-
-
-  // ====================
-  // Digital I/O
-  // ====================
 
   // SPI / I2S (partial, see I2C section above for I2S SCK and FS)
   // -------------------------------------------------------------
@@ -70,8 +59,8 @@ const PinDescription g_APinDescription[]=
   /* ~D14, RX */ { PORTA, 22, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM4_CH0, TC4_CH0, EXTERNAL_INT_6 }, // RX: SERCOM0/PAD[3], TC4/WO[0]
   /* ~D15, TX */ { PORTA, 23, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM4_CH1, TC4_CH1, EXTERNAL_INT_7 }, // TX: SERCOM0/PAD[2], TC4/WO[1]
 
-  // Display (SS/CS, DC, RST)
-  // ------------------------
+  // Display (SS, DC, RST)
+  // ----------------------
   /* ~D16 */ { PORTA, 18, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH0, TC3_CH0, EXTERNAL_INT_2 }, // TC3/WO[0]
   /* ~D17 */ { PORTA, 27, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_15},
   /* ~D18 */ { PORTA, 28, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_8},
@@ -88,7 +77,7 @@ const PinDescription g_APinDescription[]=
 
   // AREF (Not connected on board)
   // -----------------------------
-  /* D23, AREF */ { PORTA, 3, PIO_ANALOG, (PIN_ATTR_ANALOG), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // DAC/VREFP
+  /* AREF */ { PORTA, 3, PIO_ANALOG, (PIN_ATTR_ANALOG), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE }, // DAC/VREFP
 };
 
 extern "C" {
@@ -97,7 +86,7 @@ extern "C" {
     }
 }
 
-const void* g_apTCInstances[TCC_INST_NUM+TC_INST_NUM]={ TCC0, TCC1, TCC2, TC3, TC4, TC5 };
+const void* g_apTCInstances[TCC_INST_NUM+TC_INST_NUM]={TCC0, TCC1, TCC2, TC3, TC4, TC5};
 
 // Multi-serial objects instantiation
 SERCOM sercom0(SERCOM0);
@@ -105,9 +94,12 @@ SERCOM sercom1(SERCOM1);
 SERCOM sercom2(SERCOM2);
 SERCOM sercom3(SERCOM3);
 
-// TODO!
-Uart Serial( &sercom0, PIN_SERIAL_RX, PIN_SERIAL_TX, PAD_SERIAL_RX, PAD_SERIAL_TX );
+// Alias Serial to USB virtual serial port for ease of use
+Uart Serial = SerialUSB;
+
+// For physical serial pins, Serial1 can be used
+Uart Serial1(&sercom0, PIN_SERIAL_RX, PIN_SERIAL_TX, PAD_SERIAL_RX, PAD_SERIAL_TX);
 void SERCOM0_Handler()
 {
-  Serial.IrqHandler();
+  Serial1.IrqHandler();
 }
