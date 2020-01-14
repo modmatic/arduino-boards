@@ -57,8 +57,8 @@ extern "C"
 extern "C" unsigned int PINCOUNT_fn();
 #endif
 #define PINS_COUNT           (PINCOUNT_fn())
-#define NUM_DIGITAL_PINS     (20u)
-#define NUM_ANALOG_INPUTS    (6u)
+#define NUM_DIGITAL_PINS     (23u)
+#define NUM_ANALOG_INPUTS    (9u)
 #define NUM_ANALOG_OUTPUTS   (1u)
 #define analogInputToDigitalPin(p)  ((p <= 8u) ? (p) : -1)
 
@@ -113,6 +113,23 @@ static const uint8_t A7  = PIN_A7;
 static const uint8_t A8  = PIN_A8;
 static const uint8_t DAC0 = PIN_DAC0;
 #define ADC_RESOLUTION		12
+
+/*
+ * Extension pins
+ */
+#define PIN_X0               (9ul)
+#define PIN_X1               (10ul)
+#define PIN_X2               (11ul)
+#define PIN_X3               PIN_A0
+#define PIN_X4               PIN_A1
+#define PIN_X5               PIN_A2
+
+static const uint8_t X0  = PIN_X0;
+static const uint8_t X1  = PIN_X1;
+static const uint8_t X2  = PIN_X2;
+static const uint8_t X3  = PIN_X3;
+static const uint8_t X4  = PIN_X4;
+static const uint8_t X5  = PIN_X5;
 
 /*
  * ATN represents the slave/chip select pin for the first SPI module,
