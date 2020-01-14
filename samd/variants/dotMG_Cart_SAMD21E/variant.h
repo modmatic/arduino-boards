@@ -79,16 +79,6 @@ extern "C" unsigned int PINCOUNT_fn();
 // #define digitalPinToTimer(P)
 
 /*
- * LEDs
- *
- * This board does not contain LEDs, but these are defined as a
- * matter of convention, and for using the board outside of dotMG.
- */
-#define PIN_LED_13           (13u)
-#define PIN_LED              PIN_LED_13
-#define LED_BUILTIN          PIN_LED_13
-
-/*
  * Analog pins
  */
 #define PIN_A0               (0ul)
