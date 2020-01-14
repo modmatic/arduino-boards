@@ -14,14 +14,14 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-# Arduino Zero (Native USB Port)
+# dotMG Cart (SAMD21E)
 # --------------------------------------
 dotmg_cart_samd21e.name=dotMG Cart (SAMD21E)
 
-# dotmg_cart_samd21e.vid.0=0x04D8
-# dotmg_cart_samd21e.pid.0=0xEC62
-# dotmg_cart_samd21e.build.vid=0x048D
-# dotmg_cart_samd21e.build.pid=0xEC62
+dotmg_cart_samd21e.vid.0=0x04D8
+dotmg_cart_samd21e.pid.0=0xEC62
+dotmg_cart_samd21e.build.vid=0x048D
+dotmg_cart_samd21e.build.pid=0xEC62
 
 dotmg_cart_samd21e.upload.tool=bossac
 dotmg_cart_samd21e.upload.protocol=sam-ba
@@ -32,8 +32,8 @@ dotmg_cart_samd21e.upload.native_usb=true
 
 dotmg_cart_samd21e.build.mcu=cortex-m0plus
 dotmg_cart_samd21e.build.f_cpu=48000000L
-dotmg_cart_samd21e.build.usb_product=dotMG Cart (SAMD21E)
-dotmg_cart_samd21e.build.usb_manufacturer=Modmatic, LLC
+dotmg_cart_samd21e.build.usb_product="dotMG Cart (SAMD21E)"
+dotmg_cart_samd21e.build.usb_manufacturer="Modmatic, LLC"
 dotmg_cart_samd21e.build.board=DOTMG_CART_SAMD21E
 dotmg_cart_samd21e.build.core=arduino
 dotmg_cart_samd21e.build.extra_flags=-D__SAMD21E18A__ {build.usb_flags}

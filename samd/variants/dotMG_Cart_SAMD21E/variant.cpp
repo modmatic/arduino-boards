@@ -46,7 +46,7 @@ const PinDescription g_APinDescription[]=
   // -------------------------------------------------------------
   /*  ~D9, SPI: SCK           */ { PORTA, 17, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM2_CH1, TCC2_CH1, EXTERNAL_INT_1 }, // SCK: SERCOM1/PAD[1], TCC2/WO[1]
   /* ~D10, SPI: MOSI          */ { PORTA, 16, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM2_CH0, TCC2_CH0, EXTERNAL_INT_0 }, // MOSI: SERCOM1/PAD[0], TCC2/WO[0]
-  /* ~D11, SPI: MISO, I2S: SD */ { PORTA, 19, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH1, TC3_CH1, EXTERNAL_INT_3 },  // MISO: SERCOM1/PAD[3], TC3/WO[1]
+  /* ~D11, SPI: MISO, I2S: SD */ { PORTA, 18, PIO_SERCOM, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH0, TC3_CH0, EXTERNAL_INT_2 }, // MISO: SERCOM1/PAD[3], TC3/WO[0]
 
   // Speaker
   // --------------------
@@ -61,9 +61,9 @@ const PinDescription g_APinDescription[]=
 
   // Display (SS, DC, RST)
   // ----------------------
-  /* ~D16 */ { PORTA, 18, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH0, TC3_CH0, EXTERNAL_INT_2 }, // TC3/WO[0]
-  /* ~D17 */ { PORTA, 27, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_15},
-  /* ~D18 */ { PORTA, 28, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_8},
+  /* ~D16 */ { PORTA, 19, PIO_DIGITAL, (PIN_ATTR_DIGITAL|PIN_ATTR_PWM|PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH1, TC3_CH1, EXTERNAL_INT_3 }, // TC3/WO[1]
+  /* ~D17 */ { PORTA, 27, PIO_DIGITAL, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_15},
+  /* ~D18 */ { PORTA, 28, PIO_DIGITAL, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_8},
 
   // USB
   // ----------------------
@@ -93,9 +93,6 @@ SERCOM sercom0(SERCOM0);
 SERCOM sercom1(SERCOM1);
 SERCOM sercom2(SERCOM2);
 SERCOM sercom3(SERCOM3);
-
-// Alias Serial to USB virtual serial port for ease of use
-Uart Serial = SerialUSB;
 
 // For physical serial pins, Serial1 can be used
 Uart Serial1(&sercom0, PIN_SERIAL_RX, PIN_SERIAL_TX, PAD_SERIAL_RX, PAD_SERIAL_TX);

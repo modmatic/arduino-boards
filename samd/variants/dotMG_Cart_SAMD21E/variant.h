@@ -158,7 +158,7 @@ static const uint8_t ATN = PIN_ATN;
 #define PIN_SPI_SCK          (9u)
 #define PERIPH_SPI           sercom1
 #define PAD_SPI_TX           SPI_PAD_0_SCK_1
-#define PAD_SPI_RX           SERCOM_RX_PAD_3
+#define PAD_SPI_RX           SERCOM_RX_PAD_2
 
 static const uint8_t SS	  = PIN_A0;
 static const uint8_t MOSI = PIN_SPI_MOSI;
@@ -241,8 +241,11 @@ unsigned int PINCOUNT_fn();
 //
 // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
 //                            pins are NOT connected to anything by default.
+
+#define Serial SerialUSB  // Alias Serial to USB virtual serial port for ease of use
+
 #define SERIAL_PORT_USBVIRTUAL      SerialUSB
-#define SERIAL_PORT_MONITOR         Serial  // Alias of SerialUSB
+#define SERIAL_PORT_MONITOR         Serial
 // Serial has no physical pins broken out, so it's not listed as HARDWARE port
 #define SERIAL_PORT_HARDWARE        Serial1
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
