@@ -1,0 +1,58 @@
+{
+    "packages": [
+        {
+            "email": "contact@modmatic.io", 
+            "help": {
+                "online": "https://modmatic.io"
+            }, 
+            "maintainer": "Modmatic", 
+            "name": "modmatic", 
+            "platforms": [
+                {
+                    "architecture": "samd", 
+                    "archiveFileName": "modmatic-samd-1.0.0.tar.gz", 
+                    "boards": [
+                        {
+                            "name": "dotMG Cart (SAMD21E)"
+                        }
+                    ], 
+                    "category": "Modmatic", 
+                    "checksum": "SHA-256:39dbdc8760274158bdb4d3960e707a1cdeb5094ef06890d32c23ab16811d5c6a", 
+                    "name": "Modmatic SAMD (32-bit ARM Cortex-M0+) Boards", 
+                    "size": "1081397", 
+                    "toolsDependencies": [
+                        {
+                            "name": "arm-none-eabi-gcc", 
+                            "packager": "arduino", 
+                            "version": "7-2017q4"
+                        }, 
+                        {
+                            "name": "bossac", 
+                            "packager": "arduino", 
+                            "version": "1.8.0-48-gb176eee"
+                        }, 
+                        {
+                            "name": "openocd", 
+                            "packager": "arduino", 
+                            "version": "0.10.0-arduino9"
+                        }, 
+                        {
+                            "name": "CMSIS", 
+                            "packager": "arduino", 
+                            "version": "4.5.0"
+                        }, 
+                        {
+                            "name": "CMSIS-Atmel", 
+                            "packager": "arduino", 
+                            "version": "1.2.0"
+                        }
+                    ], 
+                    "url": "file://localhost/Users/andrewmeyer/code/arduino-boards/modmatic-samd-1.0.0.tar.gz", 
+                    "version": "1.0.0"
+                }
+            ], 
+            "tools": [], 
+            "websiteURL": "https://modmatic.io"
+        }
+    ]
+}
