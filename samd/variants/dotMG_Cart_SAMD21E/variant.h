@@ -110,7 +110,7 @@ static const uint8_t DAC0 = PIN_DAC0;
 #define PIN_X0               (1ul)
 #define PIN_X1               (2ul)
 #define PIN_X2               (3ul)
-#define PIN_X3               (10ul)
+#define PIN_X3               (4ul)
 #define PIN_X4               (11ul)
 #define PIN_X5               (12ul)
 #define PIN_X6               (13ul)
@@ -145,15 +145,14 @@ static const uint8_t ATN = PIN_ATN;
  */
 #define SPI_INTERFACES_COUNT 1
 
-#define PIN_SPI_SS           (10u)
 #define PIN_SPI_MOSI         (11u)
 #define PIN_SPI_MISO         (12u)
 #define PIN_SPI_SCK          (13u)
 #define PERIPH_SPI           sercom1
-#define PAD_SPI_TX           SPI_PAD_0_SCK_3
-#define PAD_SPI_RX           SERCOM_RX_PAD_1
 
-static const uint8_t SS	  = PIN_SPI_SS;
+#define PAD_SPI_TX           SPI_PAD_0_SCK_1
+#define PAD_SPI_RX           SERCOM_RX_PAD_2
+
 static const uint8_t MOSI = PIN_SPI_MOSI;
 static const uint8_t MISO = PIN_SPI_MISO;
 static const uint8_t SCK  = PIN_SPI_SCK;
