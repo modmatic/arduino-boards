@@ -107,12 +107,13 @@ static const uint8_t DAC0 = PIN_DAC0;
 /*
  * Extension pins
  */
-#define PIN_X0               (9ul)
-#define PIN_X1               (10ul)
-#define PIN_X2               (11ul)
-#define PIN_X3               PIN_A0
-#define PIN_X4               PIN_A1
-#define PIN_X5               PIN_A2
+#define PIN_X0               (1ul)
+#define PIN_X1               (2ul)
+#define PIN_X2               (3ul)
+#define PIN_X3               (10ul)
+#define PIN_X4               (11ul)
+#define PIN_X5               (12ul)
+#define PIN_X6               (13ul)
 
 static const uint8_t X0  = PIN_X0;
 static const uint8_t X1  = PIN_X1;
@@ -120,6 +121,7 @@ static const uint8_t X2  = PIN_X2;
 static const uint8_t X3  = PIN_X3;
 static const uint8_t X4  = PIN_X4;
 static const uint8_t X5  = PIN_X5;
+static const uint8_t X6  = PIN_X6;
 
 /*
  * ATN represents the slave/chip select pin for the first SPI module,
@@ -143,14 +145,15 @@ static const uint8_t ATN = PIN_ATN;
  */
 #define SPI_INTERFACES_COUNT 1
 
-#define PIN_SPI_MISO         (11u)
-#define PIN_SPI_MOSI         (10u)
-#define PIN_SPI_SCK          (9u)
+#define PIN_SPI_SS           (10u)
+#define PIN_SPI_MOSI         (11u)
+#define PIN_SPI_MISO         (12u)
+#define PIN_SPI_SCK          (13u)
 #define PERIPH_SPI           sercom1
-#define PAD_SPI_TX           SPI_PAD_0_SCK_1
-#define PAD_SPI_RX           SERCOM_RX_PAD_2
+#define PAD_SPI_TX           SPI_PAD_0_SCK_3
+#define PAD_SPI_RX           SERCOM_RX_PAD_1
 
-static const uint8_t SS	  = PIN_A0;
+static const uint8_t SS	  = PIN_SPI_SS;
 static const uint8_t MOSI = PIN_SPI_MOSI;
 static const uint8_t MISO = PIN_SPI_MISO;
 static const uint8_t SCK  = PIN_SPI_SCK;
@@ -160,8 +163,8 @@ static const uint8_t SCK  = PIN_SPI_SCK;
  */
 #define WIRE_INTERFACES_COUNT 1
 
-#define PIN_WIRE_SDA         (2u)
-#define PIN_WIRE_SCL         (1u)
+#define PIN_WIRE_SDA         (3u)
+#define PIN_WIRE_SCL         (2u)
 #define PERIPH_WIRE          sercom0
 #define WIRE_IT_HANDLER      SERCOM0_Handler
 
@@ -181,9 +184,9 @@ static const uint8_t SCL = PIN_WIRE_SCL;
 
 #define I2S_DEVICE          0
 #define I2S_CLOCK_GENERATOR 3
-#define PIN_I2S_SD          (11u)
-#define PIN_I2S_SCK         (1u)
-#define PIN_I2S_FS          (2u)
+#define PIN_I2S_SD          (1u)
+#define PIN_I2S_SCK         (2u)
+#define PIN_I2S_FS          (3u)
 
 #ifdef __cplusplus
 }
