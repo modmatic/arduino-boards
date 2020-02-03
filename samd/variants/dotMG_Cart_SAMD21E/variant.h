@@ -62,12 +62,12 @@ extern "C" unsigned int PINCOUNT_fn();
 #define NUM_ANALOG_OUTPUTS   (1u)
 #define analogInputToDigitalPin(p)  (((p) < NUM_ANALOG_INPUTS) ? (p) : -1)
 
-#define digitalPinToPort(P)        ( &(PORT->Group[g_APinDescription[P].ulPort]) )
-#define digitalPinToBitMask(P)     ( 1 << g_APinDescription[P].ulPin )
-#define portOutputRegister(port)   ( &(port->OUT.reg) )
-#define portInputRegister(port)    ( &(port->IN.reg) )
-#define portModeRegister(port)     ( &(port->DIR.reg) )
-#define digitalPinHasPWM(P)        ( g_APinDescription[P].ulPWMChannel != NOT_ON_PWM || g_APinDescription[P].ulTCChannel != NOT_ON_TIMER )
+#define digitalPinToPort(P)        (&(PORT->Group[g_APinDescription[P].ulPort]))
+#define digitalPinToBitMask(P)     (1 << g_APinDescription[P].ulPin)
+#define portOutputRegister(port)   (&(port->OUT.reg))
+#define portInputRegister(port)    (&(port->IN.reg))
+#define portModeRegister(port)     (&(port->DIR.reg))
+#define digitalPinHasPWM(P)        (g_APinDescription[P].ulPWMChannel != NOT_ON_PWM || g_APinDescription[P].ulTCChannel != NOT_ON_TIMER)
 
 /*
  * digitalPinToTimer(..) is AVR-specific and is not defined for SAMD

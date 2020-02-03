@@ -13,13 +13,13 @@
                     "archiveFileName": "modmatic-samd-0.0.1.tar.gz", 
                     "boards": [
                         {
-                            "name": "dotMG Cart (SAMD21E)"
+                            "name": "dotMG (SAMD21E Cart)"
                         }
                     ], 
                     "category": "Modmatic", 
-                    "checksum": "SHA-256:8158f018197010abfe6ccd9a4f1f78615d65ec7d5cf33a04f3a9cccd007572a8", 
+                    "checksum": "SHA-256:75d67ff262362f66f11b858dfe6de8fed1ebb64b2942a6909769c08fb8b1af23", 
                     "name": "Modmatic SAMD (32-bit ARM Cortex-M0+) Boards", 
-                    "size": "1081198", 
+                    "size": "1081172", 
                     "toolsDependencies": [
                         {
                             "name": "arm-none-eabi-gcc", 

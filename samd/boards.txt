@@ -16,7 +16,7 @@
 
 # dotMG Cart (SAMD21E)
 # --------------------------------------
-dotmg_cart_samd21e.name=dotMG Cart (SAMD21E)
+dotmg_cart_samd21e.name=dotMG (SAMD21E Cart)
 
 dotmg_cart_samd21e.vid.0=0x04D8
 dotmg_cart_samd21e.pid.0=0xEC62
@@ -33,7 +33,7 @@ dotmg_cart_samd21e.upload.native_usb=true
 dotmg_cart_samd21e.build.mcu=cortex-m0plus
 dotmg_cart_samd21e.build.f_cpu=48000000L
 dotmg_cart_samd21e.build.usb_product="dotMG Cart (SAMD21E)"
-dotmg_cart_samd21e.build.usb_manufacturer="Modmatic, LLC"
+dotmg_cart_samd21e.build.usb_manufacturer="Modmatic"
 dotmg_cart_samd21e.build.board=DOTMG_CART_SAMD21E
 dotmg_cart_samd21e.build.core=arduino
 dotmg_cart_samd21e.build.extra_flags=-D__SAMD21E18A__ -DMODMATIC_DOTMG_CART_SAMD21E {build.usb_flags}
