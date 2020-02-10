@@ -17,9 +17,9 @@
                         }
                     ], 
                     "category": "Modmatic", 
-                    "checksum": "SHA-256:75d67ff262362f66f11b858dfe6de8fed1ebb64b2942a6909769c08fb8b1af23", 
+                    "checksum": "SHA-256:70f4d81e64887b25964aec9287228c0c1f35bd24adcde9ef1fda06e9d4c54adf", 
                     "name": "Modmatic SAMD (32-bit ARM Cortex-M0+) Boards", 
-                    "size": "1081172", 
+                    "size": "1081178", 
                     "toolsDependencies": [
                         {
                             "name": "arm-none-eabi-gcc", 
