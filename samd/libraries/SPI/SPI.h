@@ -41,8 +41,7 @@
   // The datasheet specifies a typical SPI SCK period (tSCK) of 42 ns,
   // see "Table 36-48. SPI Timing Characteristics and Requirements",
   // which translates into a maximum SPI clock of 23.8 MHz.
-  // Conservatively, the divider is set for a 12 MHz maximum SPI clock.
-  #define SPI_MIN_CLOCK_DIVIDER (uint8_t)(1 + ((F_CPU - 1) / 12000000))
+  #define SPI_MIN_CLOCK_DIVIDER (uint8_t)(1 + ((F_CPU - 1) / 24000000))
 #endif
 
 class SPISettings {
@@ -136,6 +135,7 @@ class SPIClass {
   void setDataMode(uint8_t uc_mode);
   void setClockDivider(uint8_t uc_div);
 
+
   private:
   void init();
   void config(SPISettings settings);
@@ -154,6 +154,7 @@ class SPIClass {
   uint8_t interruptMode;
   char interruptSave;
   uint32_t interruptMask;
+  volatile bool acquired;
 };
 
 #if SPI_INTERFACES_COUNT > 0
