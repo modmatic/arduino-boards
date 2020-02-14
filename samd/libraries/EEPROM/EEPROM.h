@@ -43,32 +43,40 @@
 #define EEPROM_SPI_SS       18
 #define EEPROM_SPI_SS_MASK  digitalPinToBitMask(EEPROM_SPI_SS);
 
-static void begin_spi() {
+static void begin_spi_xfr() {
+    static bool spi_init;
+    if (!spi_init) {
+        *portModeRegister(EEPROM_SPI_SS_PORT) |= EEPROM_SPI_SS_MASK;
+        *portOutputRegister(EEPROM_SPI_SS_PORT) |= EEPROM_SPI_SS_MASK;
+        SPI.begin();
+        spi_init = true;
+    }
+
     *portOutputRegister(EEPROM_SPI_SS_PORT) &= ~EEPROM_SPI_SS_MASK;
     SPI.beginTransaction(EEPROM_SPI_SETTINGS);
 }
 
-static void end_spi() {
+static void end_spi_xfr() {
     SPI.endTransaction();
     *portOutputRegister(EEPROM_SPI_SS_PORT) |= EEPROM_SPI_SS_MASK;
 }
 
 static void wait_eeprom_ready() {
-    begin_spi();
+    begin_spi_xfr();
     SPI.transfer(RDSR);
     while (SPI.transfer(0) & SR_WIP);
-    end_spi();
+    end_spi_xfr();
 }
 
 static uint8_t eeprom_read_byte(uint8_t *address) {
     wait_eeprom_ready();
 
-    begin_spi();
+    begin_spi_xfr();
     SPI.transfer(READ);
     SPI.transfer((((uint16_t)(uint32_t)address) & 0xFF00) >> 8);  // high byte
     SPI.transfer((uint8_t)(uint32_t)address);  // low byte
     uint8_t data = SPI.transfer(0);
-    end_spi();
+    end_spi_xfr();
 
     return data;
 }
@@ -76,16 +84,16 @@ static uint8_t eeprom_read_byte(uint8_t *address) {
 static void eeprom_write_byte(uint8_t *address, uint8_t value) {
     wait_eeprom_ready();
 
-    begin_spi();
+    begin_spi_xfr();
     SPI.transfer(WREN);
-    end_spi();
+    end_spi_xfr();
 
-    begin_spi();
+    begin_spi_xfr();
     SPI.transfer(WRITE);
     SPI.transfer((((uint16_t)(uint32_t)address) & 0xFF00) >> 8);  // high byte
     SPI.transfer((uint8_t)(uint32_t)address);  // low byte
     SPI.transfer(value);
-    end_spi();
+    end_spi_xfr();
 }
 
 /***
