@@ -5,9 +5,9 @@ import sys
 import tarfile
 
 
-def make_tarfile(output_filename, source_dir):
+def make_tarfile(output_filename, source_dir, top_dir):
     with tarfile.open(output_filename, 'w:gz') as tar:
-        tar.add(source_dir, arcname=os.path.basename(source_dir))
+        tar.add(source_dir, arcname=top_dir)
 
     hasher = hashlib.sha256()
     with open(output_filename, 'rb') as fh:
@@ -21,7 +21,8 @@ version = sys.argv[2]
 base_url = sys.argv[3]
 tar_name = 'modmatic-' + arch + '-' + version + '.tar.gz'
 
-digest, size = make_tarfile(tar_name, arch)
+# Assumes architecture directory is next to this file's parent directory
+digest, size = make_tarfile(tar_name, os.path.join('..', 'ArduinoCore-' + arch), arch)
 
 with open('package_modmatic_index.json', 'r+') as index_file:
     data = json.load(index_file)

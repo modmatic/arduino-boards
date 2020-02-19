@@ -1,3 +1,3 @@
-# arduino-boards
+# arduino-boards-index
 
-Board definitions for Modmatic Arduino-compatible boards
+Board index for Modmatic Arduino-compatible boards

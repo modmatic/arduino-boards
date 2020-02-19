@@ -1,57 +1,57 @@
 {
     "packages": [
         {
-            "email": "contact@modmatic.io", 
+            "email": "contact@modmatic.io",
             "help": {
                 "online": "https://modmatic.io"
-            }, 
-            "maintainer": "Modmatic", 
-            "name": "modmatic", 
+            },
+            "maintainer": "Modmatic",
+            "name": "modmatic",
             "platforms": [
                 {
-                    "architecture": "samd", 
-                    "archiveFileName": "modmatic-samd-0.0.1.tar.gz", 
+                    "architecture": "samd",
+                    "archiveFileName": "modmatic-samd-0.0.1.tar.gz",
                     "boards": [
                         {
-                            "name": "dotMG (SAMD21E Cart)"
+                            "name": "dotMG (SAMD51 Cart)"
                         }
-                    ], 
-                    "category": "Modmatic", 
-                    "checksum": "SHA-256:10da5f0231980e737fa3700da8615663be11c389bc4761e2b9246f5abb8737a1", 
-                    "name": "Modmatic SAMD (32-bit ARM Cortex-M0+) Boards", 
-                    "size": "1082934", 
+                    ],
+                    "category": "Modmatic",
+                    "checksum": "SHA-256:cc65cc9c34bf3883e2385e6f48383d47a0f51f78f82b766763360d44d37b63fa",
+                    "name": "Modmatic SAMD (32-bit ARM Cortex-M0+) Boards",
+                    "size": "18143396",
                     "toolsDependencies": [
                         {
-                            "name": "arm-none-eabi-gcc", 
-                            "packager": "arduino", 
+                            "name": "arm-none-eabi-gcc",
+                            "packager": "arduino",
                             "version": "7-2017q4"
-                        }, 
+                        },
                         {
-                            "name": "bossac", 
-                            "packager": "arduino", 
+                            "name": "bossac",
+                            "packager": "arduino",
                             "version": "1.8.0-48-gb176eee"
-                        }, 
+                        },
                         {
-                            "name": "openocd", 
-                            "packager": "arduino", 
+                            "name": "openocd",
+                            "packager": "arduino",
                             "version": "0.10.0-arduino9"
-                        }, 
+                        },
                         {
-                            "name": "CMSIS", 
-                            "packager": "arduino", 
+                            "name": "CMSIS",
+                            "packager": "arduino",
                             "version": "4.5.0"
-                        }, 
+                        },
                         {
-                            "name": "CMSIS-Atmel", 
-                            "packager": "arduino", 
+                            "name": "CMSIS-Atmel",
+                            "packager": "arduino",
                             "version": "1.2.0"
                         }
-                    ], 
-                    "url": "file://localhost/Users/andrewmeyer/code/arduino-boards/modmatic-samd-0.0.1.tar.gz", 
+                    ],
+                    "url": "file://localhost/Users/andrewmeyer/code/arduino-boards-index/modmatic-samd-0.0.1.tar.gz",
                     "version": "0.0.1"
                 }
-            ], 
-            "tools": [], 
+            ],
+            "tools": [],
             "websiteURL": "https://modmatic.io"
         }
     ]
