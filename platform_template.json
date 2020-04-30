@@ -1,0 +1,37 @@
+{
+    "architecture": "samd",
+    "boards": [
+        {
+            "name": "dotMG (SAMD51 Cart)"
+        }
+    ],
+    "category": "Modmatic",
+    "name": "Modmatic SAMD (32-bit ARM Cortex-M0+ and Cortex-M4) Boards",
+    "toolsDependencies": [
+        {
+            "name": "arm-none-eabi-gcc",
+            "packager": "arduino",
+            "version": "7-2017q4"
+        },
+        {
+            "name": "bossac",
+            "packager": "arduino",
+            "version": "1.8.0-48-gb176eee"
+        },
+        {
+            "name": "openocd",
+            "packager": "arduino",
+            "version": "0.10.0-arduino9"
+        },
+        {
+            "name": "CMSIS",
+            "packager": "arduino",
+            "version": "4.5.0"
+        },
+        {
+            "name": "CMSIS-Atmel",
+            "packager": "arduino",
+            "version": "1.2.0"
+        }
+    ]
+}
