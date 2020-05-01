@@ -10,16 +10,16 @@
             "platforms": [
                 {
                     "architecture": "samd",
-                    "archiveFileName": "modmatic-samd-0.0.1.tar.gz",
+                    "archiveFileName": "modmatic-samd-0.1.0.tar.gz",
                     "boards": [
                         {
                             "name": "dotMG (SAMD51 Cart)"
                         }
                     ],
                     "category": "Modmatic",
-                    "checksum": "SHA-256:fc10537f832afe892f018d03b602e147b159516f9ba766b11c6e81667b4066f1",
+                    "checksum": "SHA-256:91357d5abd2e782ae59eded5a9a07fb72de4ecad453f53fcd2783af307895cdb",
                     "name": "Modmatic SAMD (32-bit ARM Cortex-M0+ and Cortex-M4) Boards",
-                    "size": "18176037",
+                    "size": "18194592",
                     "toolsDependencies": [
                         {
                             "name": "arm-none-eabi-gcc",
@@ -47,8 +47,8 @@
                             "version": "1.2.0"
                         }
                     ],
-                    "url": "file://localhost/Users/andrewmeyer/code/arduino-boards-index/modmatic-samd-0.0.1.tar.gz",
-                    "version": "0.0.1"
+                    "url": "https://https://raw.githubusercontent.com/modmatic/arduino-boards-index/master/modmatic-samd-0.1.0.tar.gz",
+                    "version": "0.1.0"
                 }
             ],
             "tools": [],
