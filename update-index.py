@@ -27,7 +27,7 @@ arch = sys.argv[1]
 arch_path = os.path.join('..', 'ArduinoCore-' + arch)
 platform_path = os.path.join(arch_path, 'platform.txt')
 version = find_version(platform_path)
-base_url = 'https://https://raw.githubusercontent.com/modmatic/arduino-boards-index/master'
+base_url = 'https://raw.githubusercontent.com/modmatic/arduino-boards-index/master'
 tar_name = 'modmatic-' + arch + '-' + version + '.tar.gz'
 
 # Assumes architecture directory is next to this file's parent directory
