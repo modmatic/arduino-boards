@@ -91,6 +91,48 @@
                     ],
                     "url": "https://raw.githubusercontent.com/modmatic/arduino-boards-index/master/modmatic-samd-0.1.1.tar.gz",
                     "version": "0.1.1"
+                },
+                {
+                    "architecture": "samd",
+                    "archiveFileName": "modmatic-samd-0.2.0.tar.gz",
+                    "boards": [
+                        {
+                            "name": "dotMG (SAMD51 Cart)"
+                        }
+                    ],
+                    "category": "Modmatic",
+                    "checksum": "SHA-256:cb7c02930d289ac9da070ddfc78fdb73ec00358e2f5f86c95b5f61aee5a13208",
+                    "name": "Modmatic SAMD (32-bit ARM Cortex-M0+ and Cortex-M4) Boards",
+                    "size": "18207239",
+                    "toolsDependencies": [
+                        {
+                            "name": "arm-none-eabi-gcc",
+                            "packager": "arduino",
+                            "version": "7-2017q4"
+                        },
+                        {
+                            "name": "bossac",
+                            "packager": "arduino",
+                            "version": "1.8.0-48-gb176eee"
+                        },
+                        {
+                            "name": "openocd",
+                            "packager": "arduino",
+                            "version": "0.10.0-arduino9"
+                        },
+                        {
+                            "name": "CMSIS",
+                            "packager": "arduino",
+                            "version": "4.5.0"
+                        },
+                        {
+                            "name": "CMSIS-Atmel",
+                            "packager": "arduino",
+                            "version": "1.2.0"
+                        }
+                    ],
+                    "url": "https://raw.githubusercontent.com/modmatic/arduino-boards-index/master/modmatic-samd-0.2.0.tar.gz",
+                    "version": "0.2.0"
                 }
             ],
             "tools": [],
